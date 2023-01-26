@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
-#checking file exists and stuff
+# Displays information about the file `school`.
 
-name=holbertonschool
-if [ -e $name ]; then
-    echo "holbertonschool file exists"
+if [ -e "school" ]
+then
+  echo "school file exists"
+  if [ -s "school" ]
+  then
+    echo "school file is not empty"
+  else
+    echo "school file is empty"
+  fi
+
+  if [ -f "school" ]
+  then
+    echo "school is a regular file"
+  fi
 else
-    echo "holbertonschool file does not exist"
-    exit 1
-fi
-if [ ! -s $name ]; then
-    echo "holbertonschool file is empty"
-else
-    echo "holbertonschool file is not empty"
-fi
-if [ -f $name ]; then
-    echo "holbertonschool is a regular file"
+  echo "school file does not exist"
 fi
